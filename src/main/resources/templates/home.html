@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .border{
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+<h1>Liste des employées</h1>
+
+<table class="border">
+   <thead class="border">
+    <tr class="border">
+        <th>Prénom</th>
+        <th>Nom</th>
+    </tr>
+   </thead>
+    <tbody class="border">
+        <tr class="border" th:each="employee: ${employees}">
+            <td><span th:text="${employee.firstName}"></span></td>
+            <td><span th:text="${employee.lastName}"></span></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

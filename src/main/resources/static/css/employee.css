@@ -1,0 +1,19 @@
+.border{
+    border: solid 1px black;
+}
+header{
+    background-color: aquamarine;
+    margin: 0;
+}
+body{
+    margin: 0;
+}
+header h1{
+    margin: 0;
+    text-align: center;
+    font-family: "Brush Script MT";
+}
+
+.employee-title{
+    text-align: center;
+}

@@ -14,13 +14,13 @@
 <header>
     <h1>Spring Project</h1>
 </header>
-<h1 class="employee-title">Liste des employées</h1>
+<h1 class="employee-title">Liste des employés</h1>
 
-<a href="/add_employee">
-    <button class="btn btn-success mb-3" href="/add_emloyee/">+ Add Employee</button>
+<a href="/add_employee" class="add-employee">
+    <button class="btn btn-success mb-3" href="/add_emloyee/">+ Ajouter un employé</button>
 </a>
 
-<table class="table">
+<table class="table mx-auto" style="width: 95%">
    <thead>
     <tr>
         <th>Prénom</th>
@@ -35,8 +35,8 @@
             <td><span th:text="${employee.lastName}"></span></td>
             <td><span th:text="${employee.mail}"></span></td>
             <td>
-                <a th:href="@{updateEmployee/{id}(id=${employee.id})}"><button class="btn btn-success">Edit</button></a>
-                <a th:href="@{deleteEmployee/{id}(id=${employee.id})}"><button class="btn btn-danger">Delete</button></a>
+                <a th:href="@{updateEmployee/{id}(id=${employee.id})}"><button class="btn btn-success">Modifier</button></a>
+                <a th:href="@{deleteEmployee/{id}(id=${employee.id})}"><button class="btn btn-danger">Supprimer</button></a>
             </td>
         </tr>
     </tbody>

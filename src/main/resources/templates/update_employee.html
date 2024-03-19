@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update Employee</h1>
+
+<form method="post"
+      th:action="@{/saveEmployee}" th:object="${employee}">
+    <div class="form-group">
+        <input
+                type="hidden" th:field="*{id}" class="form-control">
+    </div>
+
+        <label for="firstNameInput">Prénom</label>
+        <input type="text" th:field="*{firstName}" class="form-control" id="firstNameInput"
+                aria-describedby="firstNameHelp" placeholder="Saisir le prénom">
+
+        <label for="lastNameInput">Prénom</label>
+        <input type="text" th:field="*{lastName}" class="form-control" id="lastNameInput"
+        aria-describedby="lastNameHelp" placeholder="Saisir le prénom">
+
+
+        <label for="mailInput">Email</label>
+        <input type="text" th:field="*{mail}" class="form-control" id="mailInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email">
+
+    <button type="submit" class="btn btn-primary">Modifier</button>
+</form>
+
+</body>
+</html>

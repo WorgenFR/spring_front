@@ -53,4 +53,19 @@ public class EmployeeController {
         }
         return "error";
     }
+
+    @GetMapping("/deleteEmployee/{id}")
+    public ModelAndView deleteEmployee(@PathVariable("id") final int id) {
+        employeeService.deleteEmployee(id);
+        return new ModelAndView("redirect:/");
+    }
+
+    @GetMapping("/updateEmployee/{id}")
+    public String updateEmployee(@PathVariable("id") final int id, Model model) {
+        Employee e = employeeService.getEmployee(id);
+        model.addAttribute("employee", e);
+        return "update_employee";
+    }
+
+
 }

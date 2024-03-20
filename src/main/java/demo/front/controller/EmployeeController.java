@@ -5,6 +5,7 @@ import demo.front.service.EmployeeService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +21,10 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping("/")
-    public String Home(Model model){
+    public String Home(Model model, Authentication auth){
         Iterable<Employee> listEmployee = employeeService.getEmployees();
         model.addAttribute("employees", listEmployee);
+        model.addAttribute("auth", auth);
         return "home";
     }
 
@@ -34,9 +36,10 @@ public class EmployeeController {
     }
 
     @GetMapping("/add_employee")
-    public String addEmployee(Model model) {
+    public String addEmployee(Model model, Authentication auth) {
         model.addAttribute("employee", new Employee());
-        return "add_employee";
+        model.addAttribute("auth", auth);
+        return "forms/add_employee";
     }
 
     @PostMapping("/saveEmployee")
@@ -64,7 +67,7 @@ public class EmployeeController {
     public String updateEmployee(@PathVariable("id") final int id, Model model) {
         Employee e = employeeService.getEmployee(id);
         model.addAttribute("employee", e);
-        return "update_employee";
+        return "forms/update_employee";
     }
 
 

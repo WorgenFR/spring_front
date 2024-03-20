@@ -13,7 +13,7 @@ public class DBUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String username;
+    public String username;
     private String password;
     private String role;
 }

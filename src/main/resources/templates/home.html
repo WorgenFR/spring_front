@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Spring Project</title>
@@ -11,9 +11,7 @@
     <script>console.log($('body'))</script>
 </head>
 <body>
-<header>
-    <h1>Spring Project</h1>
-</header>
+<div th:include="header"></div>
 <h1 class="employee-title">Liste des employés</h1>
 
 <a href="/add_employee" class="add-employee">
